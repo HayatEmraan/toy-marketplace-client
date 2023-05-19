@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import logo from "../../assets/logo/logo.webp";
 import {
@@ -10,12 +10,9 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
+import { authContext } from "../../Context/OneContext";
+import { BsListNested } from "react-icons/bs";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -23,7 +20,13 @@ function classNames(...classes) {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const { user, logOut } = useContext(authContext);
+  const handleLogOut = () => {
+    logOut()
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+  console.log(user);
   return (
     <header className="bg-white">
       <nav
@@ -33,11 +36,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img
-              className="h-16 w-auto"
-              src={logo}
-              alt=""
-            />
+            <img className="h-16 w-auto" src={logo} alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -51,26 +50,55 @@ export default function Header() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link to="/" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            to="/"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Home
           </Link>
-          <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            href="#"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             All Toys
           </Link>
-          <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            href="#"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             My Toys
           </Link>
-          <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            href="#"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Add a Toy
           </Link>
-          <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            href="#"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Blogs
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to="/login" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+          {user ? (
+            <>
+              <div className="avatar me-4">
+                <div className="w-6 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img title={user?.displayName} src={user?.photoURL} />
+                </div>
+              </div>
+              <button onClick={handleLogOut}>LogOut</button>
+            </>
+          ) : (
+            <Link
+              to="/login"
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
+              Log in <span aria-hidden="true">&rarr;</span>
+            </Link>
+          )}
         </div>
       </nav>
       <Dialog
@@ -84,11 +112,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-12 w-auto"
-                src={logo}
-                alt=""
-              />
+              <img className="h-12 w-auto" src={logo} alt="" />
             </a>
             <button
               type="button"
