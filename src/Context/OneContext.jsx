@@ -22,15 +22,18 @@ const OneContext = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const logIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
   const googlePopUp = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
   const githubPopUp = () => {
+    setLoading(true);
     return signInWithPopup(auth, githubProvider);
   };
   useEffect(() => {
@@ -45,12 +48,14 @@ const OneContext = ({ children }) => {
     });
   }, []);
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
-    };
-    
-    const forgotPassword = (email) => { 
-      return sendPasswordResetEmail(auth, email)
-    }
+  };
+
+  const forgotPassword = (email) => {
+    setLoading(true);
+    return sendPasswordResetEmail(auth, email);
+  };
   const authInfo = {
     user: user,
     loading: loading,
