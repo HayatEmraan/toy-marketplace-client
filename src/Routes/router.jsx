@@ -12,6 +12,7 @@ import AddAToy from "../Pages/AddAToy/AddAToy";
 import PrivateRoute from "./PrivateRoute";
 import Blogs from "../Pages/Blog/Blogs";
 import Edit from "../libs/Edit/Edit";
+import Details from "../libs/Details/Details";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
             <Edit />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/details/:id",
+        element: <Details />,
       },
     ],
   },

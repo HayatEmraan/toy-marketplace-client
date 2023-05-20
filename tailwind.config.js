@@ -12,5 +12,6 @@ export default {
     require("daisyui"),
     require("flowbite/plugin"),
     require("@tailwindcss/forms"),
+    require("flowbite-typography"),
   ],
 };

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllToys = () => {
   const [tableData, setTableData] = useState(null);
@@ -39,9 +40,9 @@ const AllToys = () => {
                       <td>{tdata.quantity ? tdata.quantity : "Unknown"}</td>
                       <td>${tdata.price}</td>
                       <td>
-                        <button className="btn btn-ghost btn-xs">
+                        <Link to={`/details/${tdata._id}`} className="btn btn-ghost btn-xs">
                           view details
-                        </button>
+                        </Link>
                       </td>
                     </tr>
                   </React.Fragment>

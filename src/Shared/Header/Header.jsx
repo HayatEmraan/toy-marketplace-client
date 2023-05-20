@@ -22,7 +22,7 @@ export default function Header() {
   };
   console.log(user);
   return (
-    <header className="bg-white">
+    <header className="bg-white container mx-auto mb-2">
       <nav
         className="mx-auto flex container items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -174,6 +174,7 @@ export default function Header() {
           </div>
         </Dialog.Panel>
       </Dialog>
+      <hr />
     </header>
   );
 }
