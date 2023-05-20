@@ -33,7 +33,7 @@ const Details = () => {
                       >
                         {getData?.seller}
                       </a>
-                      <p class="text-base font-light text-gray-500 dark:text-gray-400">
+                      <p className="text-base font-light text-gray-500 dark:text-gray-400">
                         {getData?.email}
                       </p>
                     </div>
