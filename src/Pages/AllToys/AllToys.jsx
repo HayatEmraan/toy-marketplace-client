@@ -27,7 +27,7 @@ const AllToys = () => {
           </thead>
           <tbody>
             {tableData &&
-              tableData.map((tdata, index) => {
+              tableData.slice(0, 20).map((tdata, index) => {
                 return (
                   <React.Fragment key={tdata._id}>
                     <tr>
