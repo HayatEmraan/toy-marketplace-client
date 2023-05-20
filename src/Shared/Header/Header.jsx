@@ -57,25 +57,25 @@ export default function Header() {
             Home
           </Link>
           <Link
-            href="#"
+            to="/alltoys"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             All Toys
           </Link>
           <Link
-            href="#"
+            to="mytoys"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             My Toys
           </Link>
           <Link
-            href="#"
+            to="addatoy"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Add a Toy
           </Link>
           <Link
-            href="#"
+            to="blog"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Blogs
@@ -85,7 +85,7 @@ export default function Header() {
           {user ? (
             <>
               <div className="avatar me-4">
-                <div className="w-6 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <div className="w-7 rounded-full">
                   <img title={user?.displayName} src={user?.photoURL} />
                 </div>
               </div>
@@ -126,32 +126,55 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </a>
-              </div>
-              <div className="py-6">
                 <Link
-                  to="/login"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  to="/"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Log in
+                  Home
                 </Link>
+                <Link
+                  to="/alltoys"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  All Toys
+                </Link>
+                <Link
+                  to="mytoys"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  My Toys
+                </Link>
+                <Link
+                  to="addatoy"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Add A Toy
+                </Link>
+                <Link
+                  to="blog"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Blog
+                </Link>
+              </div>
+              <div className="py-6 flex">
+                {user ? (
+                  <>
+                    <div className="avatar me-4">
+                      <div className="w-7 rounded-full">
+                        <img title={user?.displayName} src={user?.photoURL} />
+                      </div>
+                    </div>
+                    <button onClick={handleLogOut}>LogOut</button>
+                  </>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="text-sm font-semibold leading-6 text-gray-900"
+                  >
+                    Log in <span aria-hidden="true">&rarr;</span>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

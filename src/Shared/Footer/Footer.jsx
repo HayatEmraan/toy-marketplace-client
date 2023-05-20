@@ -16,15 +16,22 @@ const FooterComponents = () => {
         <div className="w-full">
           <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 lg:px-12">
             <div>
-              <Footer.Brand src={logo} className="h-16" />
+              <Footer.Brand src={logo} className="lg:h-24" />
               <p className="text-slate-600">Toy Market Industries Ltd. <br /> Providing reliable tech since 1992</p>
             </div>
-            <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+            <div className="grid grid-cols-2 gap-8 mt-4 sm:grid-cols-5 sm:gap-6">
               <div>
                 <Footer.Title title="about" />
                 <Footer.LinkGroup col={true}>
-                  <Footer.Link href="#">Flowbite</Footer.Link>
-                  <Footer.Link href="#">Tailwind CSS</Footer.Link>
+                  <Footer.Link href="#">Toy News</Footer.Link>
+                  <Footer.Link href="#">Toy About</Footer.Link>
+                </Footer.LinkGroup>
+              </div>
+              <div>
+                <Footer.Title title="Support" />
+                <Footer.LinkGroup col={true}>
+                  <Footer.Link href="#">HelpDesk</Footer.Link>
+                  <Footer.Link href="#">Docs</Footer.Link>
                 </Footer.LinkGroup>
               </div>
               <div>
@@ -32,6 +39,13 @@ const FooterComponents = () => {
                 <Footer.LinkGroup col={true}>
                   <Footer.Link href="#">Github</Footer.Link>
                   <Footer.Link href="#">Discord</Footer.Link>
+                </Footer.LinkGroup>
+              </div>
+              <div>
+                <Footer.Title title="Download" />
+                <Footer.LinkGroup col={true}>
+                  <Footer.Link href="#">iOS</Footer.Link>
+                  <Footer.Link href="#">Android</Footer.Link>
                 </Footer.LinkGroup>
               </div>
               <div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const BlogSection = () => {
+const Blogs = () => {
   const [blogs, setBlogs] = useState(null);
   useEffect(() => {
     fetch("http://localhost:3000/temp")
@@ -10,7 +10,7 @@ const BlogSection = () => {
   return (
     <div>
       <div className="container mx-auto mt-12">
-        <div className="bg-white py-24 sm:pt-32">
+        <div className="bg-white pb-24">
           <div className="mx-auto px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -22,7 +22,7 @@ const BlogSection = () => {
             </div>
             <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
               {blogs &&
-                blogs.slice(0, 3).map((post) => (
+                blogs.map((post) => (
                   <article
                     key={post.id}
                     className="flex max-w-xl flex-col items-start justify-between"
@@ -31,9 +31,7 @@ const BlogSection = () => {
                       <time dateTime={post.datetime} className="text-gray-500">
                         {post.publish_date}
                       </time>
-                      <p
-                        className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                      >
+                      <p className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
                         {post.post_category}
                       </p>
                     </div>
@@ -76,4 +74,4 @@ const BlogSection = () => {
   );
 };
 
-export default BlogSection;
+export default Blogs;
