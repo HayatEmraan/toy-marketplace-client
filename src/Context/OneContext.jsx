@@ -36,22 +36,22 @@ const OneContext = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, githubProvider);
   };
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
         setLoading(false);
       } else {
+        setUser(null);
         setLoading(false);
       }
-      return () => unsubscribe();
+      return unsubscribe;
     });
   }, []);
-  const logOut = () => {
-    setLoading(true);
-    return signOut(auth);
-  };
-
   const forgotPassword = (email) => {
     setLoading(true);
     return sendPasswordResetEmail(auth, email);

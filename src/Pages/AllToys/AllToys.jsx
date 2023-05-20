@@ -36,11 +36,13 @@ const AllToys = () => {
                       <td>
                         {tdata.category} / {tdata.sub_category}
                       </td>
-                            <td>{ tdata.quantity ? tdata.quantity : "Unknown"}</td>
+                      <td>{tdata.quantity ? tdata.quantity : "Unknown"}</td>
                       <td>${tdata.price}</td>
-                      <button className="btn btn-ghost btn-xs">
-                        view details
-                      </button>
+                      <td>
+                        <button className="btn btn-ghost btn-xs">
+                          view details
+                        </button>
+                      </td>
                     </tr>
                   </React.Fragment>
                 );

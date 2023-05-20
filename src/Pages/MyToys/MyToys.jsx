@@ -40,14 +40,14 @@ const MyToys = () => {
                         </td>
                         <td>{tdata.quantity ? tdata.quantity : "Unknown"}</td>
                         <td>${tdata.price}</td>
-                        <div>
+                        <td>
                           <button className="btn btn-ghost btn-xs">
                             edit
                           </button>
                           <button className="btn btn-ghost btn-xs">
                             Delete
                           </button>
-                        </div>
+                        </td>
                       </tr>
                     </React.Fragment>
                   );

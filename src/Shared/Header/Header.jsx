@@ -1,18 +1,12 @@
-import { Fragment, useContext, useState } from "react";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+import { useContext, useState } from "react";
+import { Dialog, Popover } from "@headlessui/react";
 import logo from "../../assets/logo/logo.webp";
 import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { authContext } from "../../Context/OneContext";
-import { BsListNested } from "react-icons/bs";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
