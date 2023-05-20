@@ -1,10 +1,7 @@
 import { useContext, useState } from "react";
 import { Dialog, Popover } from "@headlessui/react";
 import logo from "../../assets/logo/logo.webp";
-import {
-  Bars3Icon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { authContext } from "../../Context/OneContext";
 
@@ -17,7 +14,10 @@ export default function Header() {
   const { user, logOut } = useContext(authContext);
   const handleLogOut = () => {
     logOut()
-      .then((res) => console.log(res))
+      .then((res) => {
+        localStorage.removeItem("user");
+        console.log(res);
+      })
       .catch((err) => console.log(err));
   };
   console.log(user);

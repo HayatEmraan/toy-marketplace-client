@@ -6,7 +6,7 @@ const AllToys = () => {
   useEffect(() => {
     fetch("http://localhost:3000/api/all")
       .then((res) => res.json())
-      .then((data) => setTableData(data));
+      .then((data) => setTableData(data.reverse()));
   }, []);
   console.log(tableData);
   return (
@@ -34,7 +34,7 @@ const AllToys = () => {
                       <td>{tdata.name}</td>
                       <td>{tdata.seller ? tdata.seller : "Team Toy Group"}</td>
                       <td>
-                        {tdata.category} / {tdata.sub_category}
+                        {tdata.category} / {tdata.sub_category ? tdata.sub_category : "Unknown"}
                       </td>
                       <td>{tdata.quantity ? tdata.quantity : "Unknown"}</td>
                       <td>${tdata.price}</td>

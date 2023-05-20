@@ -45,6 +45,17 @@ const OneContext = ({ children }) => {
       if (currentUser) {
         setUser(currentUser);
         setLoading(false);
+        fetch("http://localhost:3000/jwt", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: currentUser.email,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => localStorage.setItem("user", data.token));
       } else {
         setUser(null);
         setLoading(false);
