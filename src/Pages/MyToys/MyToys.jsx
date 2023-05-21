@@ -6,19 +6,28 @@ import { authContext } from "../../Context/OneContext";
 const MyToys = () => {
   const [tableData, setTableData] = useState(null);
   const [actions, setActions] = useState(null);
-  const [actionsData, setActionsData] = useState(false);
+  const [actionsData, setActionsData] = useState("");
   const { user } = useContext(authContext);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/query?email=${user?.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("user")}`,
-      },
-    })
+    fetch(
+      `http://localhost:3000/api/query${
+        !actionsData
+          ? `?email=${user?.email}`
+          : actionsData == "ascending"
+          ? `/sortings/ascending?email=${user?.email}`
+          : `/sortings/descending?email=${user?.email}`
+      }`,
+      {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("user")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => setTableData(data));
-  }, [actions]);
+  }, [actions, actionsData]);
 
   const handleDelete = (e) => {
     Swal.fire({
@@ -52,6 +61,30 @@ const MyToys = () => {
   return (
     <div>
       <div className="container mx-auto mb-8">
+        <div className="flex justify-between">
+          <div className="flex gap-4 w-1/2 mb-3">
+            <input
+              type="text"
+              placeholder="Search Here..."
+              className="input input-bordered input-md w-full"
+            />
+            <button className="btn">Search</button>
+          </div>
+          <div className="space-x-4">
+            <button
+              onClick={() => setActionsData("ascending")}
+              className="btn btn-active btn-secondary"
+            >
+              Ascending{" "}
+            </button>
+            <button
+              onClick={() => setActionsData("descending")}
+              className="btn btn-active btn-primary"
+            >
+              Descending{" "}
+            </button>
+          </div>
+        </div>
         <div className="overflow-x-auto">
           <table className="table table-compact w-full">
             <thead>
