@@ -6,7 +6,7 @@ const AllToys = () => {
   const [tableData, setTableData] = useState(null);
   useTitle("All Toys");
   useEffect(() => {
-    fetch("http://localhost:3000/api/all/limit")
+    fetch("https://toy-collection-server.vercel.app/api/all/limit")
       .then((res) => res.json())
       .then((data) => setTableData(data));
   }, []);
@@ -36,12 +36,16 @@ const AllToys = () => {
                       <td>{tdata.name}</td>
                       <td>{tdata.seller ? tdata.seller : "Team Toy Group"}</td>
                       <td>
-                        {tdata.category} / {tdata.sub_category ? tdata.sub_category : "Unknown"}
+                        {tdata.category} /{" "}
+                        {tdata.sub_category ? tdata.sub_category : "Unknown"}
                       </td>
                       <td>{tdata.quantity ? tdata.quantity : "Unknown"}</td>
                       <td>${tdata.price}</td>
                       <td>
-                        <Link to={`/details/${tdata._id}`} className="btn btn-ghost btn-xs">
+                        <Link
+                          to={`/details/${tdata._id}`}
+                          className="btn btn-ghost btn-xs"
+                        >
                           view details
                         </Link>
                       </td>

@@ -45,7 +45,7 @@ const OneContext = ({ children }) => {
       if (currentUser) {
         setUser(currentUser);
         setLoading(false);
-        fetch("http://localhost:3000/jwt", {
+        fetch("https://toy-collection-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

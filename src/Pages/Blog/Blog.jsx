@@ -9,7 +9,7 @@ const Blog = () => {
   const [getData, setData] = useState(null);
   console.log(getData);
   useEffect(() => {
-    fetch(`http://localhost:3000/api/blogs/${id}`)
+    fetch(`https://toy-collection-server.vercel.app/api/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));

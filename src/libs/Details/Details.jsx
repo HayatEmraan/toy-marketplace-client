@@ -5,11 +5,11 @@ import useTitle from "../Hook/useTitle";
 
 const Details = () => {
   const { id } = useParams();
-  useTitle("Details")
+  useTitle("Details");
   const [getData, setData] = useState(null);
   console.log(getData);
   useEffect(() => {
-    fetch(`http://localhost:3000/api/v1/${id}`)
+    fetch(`https://toy-collection-server.vercel.app/api/v1/${id}`)
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));

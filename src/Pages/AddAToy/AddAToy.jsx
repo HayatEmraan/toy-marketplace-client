@@ -38,7 +38,7 @@ const AddAToy = () => {
       ],
       tag: "Robot",
     };
-    fetch("http://localhost:3000/api/toyCollection", {
+    fetch("https://toy-collection-server.vercel.app/api/toyCollection", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -39,7 +39,7 @@ const Edit = () => {
       ],
       tag: "Robot",
     };
-    fetch(`http://localhost:3000/api/toyCollection/${id}`, {
+    fetch(`https://toy-collection-server.vercel.app/api/toyCollection/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -47,20 +47,20 @@ const Edit = () => {
       body: JSON.stringify(postToy),
     })
       .then((res) => res.json())
-        .then((data) => {
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Successfully Updated",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-            console.log(data)
+      .then((data) => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Successfully Updated",
+          showConfirmButton: false,
+          timer: 1500,
         });
+        console.log(data);
+      });
   };
   console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:3000/api/v1/${id}`)
+    fetch(`https://toy-collection-server.vercel.app/api/v1/${id}`)
       .then((res) => res.json())
       .then((data) => setToy(data));
   }, []);

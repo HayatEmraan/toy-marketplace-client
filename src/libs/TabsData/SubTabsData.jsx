@@ -9,7 +9,7 @@ const SubTabsData = ({ props }) => {
   console.log(props);
   console.log(tabsData);
   useEffect(() => {
-    fetch(`http://localhost:3000/api/sub/${props}`)
+    fetch(`https://toy-collection-server.vercel.app/api/sub/${props}`)
       .then((res) => res.json())
       .then((data) => setTabsData(data));
   }, []);

@@ -3,10 +3,10 @@ import useTitle from "../../libs/Hook/useTitle";
 import { Link } from "react-router-dom";
 
 const Blogs = () => {
-  useTitle("Blogs")
+  useTitle("Blogs");
   const [blogs, setBlogs] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:3000/api/blogs")
+    fetch("https://toy-collection-server.vercel.app/api/blogs")
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
@@ -40,7 +40,10 @@ const Blogs = () => {
                     </div>
                     <div className="group relative">
                       <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                        <Link to={`/blog/${post._id}`} className="hover:underline">
+                        <Link
+                          to={`/blog/${post._id}`}
+                          className="hover:underline"
+                        >
                           <span className="absolute inset-0" />
                           {post.topic.question}
                         </Link>
