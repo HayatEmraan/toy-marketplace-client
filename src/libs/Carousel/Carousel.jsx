@@ -9,11 +9,11 @@ const Carousel = () => {
       <div className="carousel w-full lg:h-[450px]">
         <div id="slide1" className="carousel-item relative w-full">
           <div className="flex bg-[#ECE3E1] w-full items-center justify-around rounded-lg">
-            <div>
-              <h2 className="text-6xl font-bold mb-4">
+            <div className="p-2 lg:p-0">
+              <h2 className="lg:text-6xl font-bold mb-4">
                 Best Toys Store <br /> & Online MarketPlace
               </h2>
-              <h3 className="text-3xl font-semibold mb-6">
+              <h3 className="lg:text-3xl font-semibold mb-6">
                 Give The Gift Of Your Children Everyday
               </h3>
               <Link
@@ -23,7 +23,10 @@ const Carousel = () => {
                 All Toys
               </Link>
             </div>
-            <img src={banner} className="w-[500px] h-[350px] " />
+            <img
+              src={banner}
+              className="lg:w-[500px] lg:h-[350px] w-1/2 h-3/4"
+            />
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide3" className="btn btn-circle">
@@ -36,11 +39,11 @@ const Carousel = () => {
         </div>
         <div id="slide2" className="carousel-item relative w-full">
           <div className="flex bg-[#ECE3E1] w-full items-center justify-around rounded-lg">
-            <div>
-              <h2 className="text-6xl font-bold mb-4">
+            <div className="p-2 lg:p-0">
+              <h2 className="lg:text-6xl font-bold mb-4">
                 Best Toys Store <br /> & Online MarketPlace
               </h2>
-              <h3 className="text-3xl font-semibold mb-6">
+              <h3 className="lg:text-3xl font-semibold mb-6">
                 Give The Gift Of Your Children Everyday
               </h3>
               <Link
@@ -50,7 +53,7 @@ const Carousel = () => {
                 All Toys
               </Link>
             </div>
-            <img src={banner1} className="w-[500px] h-[350px]" />
+            <img src={banner1} className="lg:w-[500px] lg:h-[350px] w-1/2" />
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide1" className="btn btn-circle">
@@ -63,11 +66,11 @@ const Carousel = () => {
         </div>
         <div id="slide3" className="carousel-item relative w-full">
           <div className="flex bg-[#ECE3E1] w-full items-center justify-around rounded-lg">
-            <div>
-              <h2 className="text-6xl font-bold mb-4">
+            <div className="p-2 lg:p-0">
+              <h2 className="lg:text-6xl font-bold mb-4">
                 Best Toys Store <br /> & Online MarketPlace
               </h2>
-              <h3 className="text-3xl font-semibold mb-6">
+              <h3 className="lg:text-3xl font-semibold mb-6">
                 Give The Gift Of Your Children Everyday
               </h3>
               <Link
@@ -77,7 +80,7 @@ const Carousel = () => {
                 All Toys
               </Link>
             </div>
-            <img src={banner2} className="w-[500px] h-[350px]" />
+            <img src={banner2} className="lg:w-[500px] lg:h-[350px] w-1/2" />
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide2" className="btn btn-circle">

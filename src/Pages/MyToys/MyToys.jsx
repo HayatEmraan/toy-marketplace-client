@@ -63,8 +63,8 @@ const MyToys = () => {
   return (
     <div>
       <div className="container mx-auto mb-8">
-        <div className="flex justify-between">
-          <div className="flex gap-4 w-1/2 mb-3">
+        <div className="lg:flex justify-between">
+          <div className="flex gap-4 lg:w-1/2 mx-2 lg:mx-0 mb-3">
             <input
               type="text"
               placeholder="Search Here..."
@@ -72,7 +72,7 @@ const MyToys = () => {
             />
             <button className="btn">Search</button>
           </div>
-          <div className="space-x-4">
+          <div className="space-x-4 mx-2 lg:mx-0 mb-4 lg:mb-0">
             <button
               onClick={() => setActionsData("ascending")}
               className="btn btn-active btn-secondary"
