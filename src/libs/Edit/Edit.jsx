@@ -19,15 +19,18 @@ const Edit = () => {
     const seller = middle.sname.value;
     const image = middle.image.value;
     const description = middle.description.value;
+    const sub_category = middle.sub_category.value;
+    const rating = middle.rating.value;
     const postToy = {
       name: name,
       price: price,
       category: select,
+      sub_category: sub_category,
       seller: seller,
       quantity: quantity,
       image: image,
       description: description,
-      rating: 4.5,
+      rating: rating,
       features: [
         "SUPER HERO ACTION FIGURE: Web-out with the Spidey and His Amazing Friends Supersized Spidey Action Figure! This 9-inch-tall figure comes with a web accessory for ultimate imaginative play.",
         "ATTACHABLE WEB ACCESSORY: Kids can attach the included web accessory to the Spidey figure’s wrist so he can “web out” just like in the preschool animated show on Disney Junior",
@@ -63,7 +66,7 @@ const Edit = () => {
   }, []);
   return (
     <div>
-      <div className="container mx-auto">
+      <div className="container mx-auto mb-8">
         <div className="flex items-center gap-12 mt-16">
           <div>
             <form
@@ -71,7 +74,7 @@ const Edit = () => {
               onSubmit={updateOne}
             >
               <h1 className="text-center text-3xl text-purple-300 font-bold my-4">
-               Update an Exiting Toy By You!{" "}
+                Update an Exiting Toy By You!{" "}
               </h1>
               <div className="flex justify-center gap-12">
                 <div>
@@ -170,8 +173,6 @@ const Edit = () => {
                   </label>
                   <select
                     name="select"
-
-                                      
                     defaultValue={toy?.category}
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
@@ -192,6 +193,44 @@ const Edit = () => {
                       Transformer
                     </option>
                   </select>
+                </div>
+              </div>
+              <div className="flex justify-center gap-12 my-2">
+                <div>
+                  <label
+                    htmlFor="rating"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Ranting
+                  </label>
+                  <input
+                    type="number"
+                    name="rating"
+                    min="0"
+                    max="5"
+                    id="rating"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Rating - min - 0 & max - 5"
+                    defaultValue={toy?.rating}
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="sub_category"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Sub-Category
+                  </label>
+                  <input
+                    type="text"
+                    name="sub_category"
+                    id="sub_category"
+                    defaultValue={toy?.sub_category}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="For Example - Gerneral Car, Smart Car, Arm Edge"
+                    required
+                  />
                 </div>
               </div>
               <div className="my-2">

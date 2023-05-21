@@ -35,7 +35,14 @@ const MyToys = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Deleted!",
+              text: "Your File has Deleted",
+              showConfirmButton: false,
+              timer: 1500,
+            });
             setActions(data);
           });
       }
