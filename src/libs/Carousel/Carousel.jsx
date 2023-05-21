@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Carousel = () => {
   return (
     <div className="container mx-auto">
-      <div className="carousel w-full h-[450px]">
+      <div className="carousel w-full lg:h-[450px]">
         <div id="slide1" className="carousel-item relative w-full">
           <div className="flex bg-[#ECE3E1] w-full items-center justify-around rounded-lg">
             <div>

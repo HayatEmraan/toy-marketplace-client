@@ -15,7 +15,7 @@ const Brands = () => {
       <h1 className="text-3xl font-bold text-center mb-3">
         Supported By Brands
       </h1>
-      <div className="flex justify-around items-center">
+      <div className="lg:flex grid grid-cols-3 p-4 justify-around items-center">
         <div data-aos="fade-up">
           <img className="w-48" src={car} alt="" />
         </div>
