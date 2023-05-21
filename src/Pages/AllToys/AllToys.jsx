@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useTitle from "../../libs/Hook/useTitle";
+import Loader from "../../libs/Loader/Loader";
 
 const AllToys = () => {
   const [tableData, setTableData] = useState(null);
+  const [loadingSpinner, setLoadingSpinner] = useState(true);
   useTitle("All Toys");
   useEffect(() => {
     fetch("https://toy-collection-server.vercel.app/api/all/limit")
       .then((res) => res.json())
-      .then((data) => setTableData(data));
+      .then((data) => {
+        setLoadingSpinner(false);
+        setTableData(data);
+      });
   }, []);
-  console.log(tableData);
   return (
     <div className="container mx-auto mb-8">
       <div className="overflow-x-auto">
@@ -56,6 +60,11 @@ const AllToys = () => {
           </tbody>
         </table>
       </div>
+      {loadingSpinner && (
+        <div className="absolute start-0 end-0 top-0 bottom-0 m-auto">
+          <Loader />
+        </div>
+      )}
     </div>
   );
 };
