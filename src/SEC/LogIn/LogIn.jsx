@@ -11,10 +11,6 @@ const LogIn = () => {
   const location = useLocation();
   const from = location?.state?.pathname || "/";
   const navigate = useNavigate();
-  // if (user) {
-  //     return <Navigate to="/" />;
-  // }
-  // console.log(logIn);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -79,7 +75,7 @@ const LogIn = () => {
             });
             setTimeout(() => {
               navigate(from);
-            }, 3000);
+            }, 2000);
             console.log(result.user)
         })
       .catch((err) => console.log(err));

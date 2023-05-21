@@ -19,16 +19,19 @@ const Private0 = ({ children }) => {
       icon: "info",
       title: "You have to logIn First to View Details!",
     });
-    setTimeout(() => {
-      <Navigate to="/login" state={location}></Navigate>;
-    }, 2000);
+    // <Navigate to="/login" state={location}></Navigate>;
+    // setTimeout(() => {
+    //   <Navigate to="/login" state={location}></Navigate>;
+    // }, 2000);
   };
   if (!user) {
-    return <Navigate to="/login" state={location}></Navigate>;
-  } else {
-      return children;
+    Toast.fire({
+      icon: "info",
+      title: "You have to logIn First to View Details!",
+    });
+    return <Navigate to="/login" replace state={location}></Navigate>;
   }
-  
+  return children;
 };
 
 export default Private0;

@@ -15,10 +15,6 @@ const Register = () => {
   const navigate = useNavigate();
   const from = location?.state?.pathname || "/";
   const [errorData, setErrorData] = useState(null);
-  // if (user) {
-  //     return <Navigate to="/" />;
-  // }
-  // console.log(logIn);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -48,7 +44,7 @@ const Register = () => {
         });
         setTimeout(() => {
           navigate(from);
-        }, 3000);
+        }, 2000);
       })
       .catch((err) => {
         setAction(false);
