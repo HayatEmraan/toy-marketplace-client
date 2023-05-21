@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import banner from "../../assets/toy/illustration.svg";
 import { authContext } from "../../Context/OneContext";
 import Swal from "sweetalert2";
+import useTitle from "../../libs/Hook/useTitle";
 
 const AddAToy = () => {
+  useTitle("Add A Toy");
   const { user } = useContext(authContext);
   const addNewtoy = (e) => {
     e.preventDefault();

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../libs/Hook/useTitle';
 
 const NotFound = () => {
+  useTitle("Not Found");
     return (
       <div>
         <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">

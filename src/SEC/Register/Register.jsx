@@ -17,8 +17,8 @@ const Register = () => {
   const from = location?.state?.pathname || "/";
   const [errorData, setErrorData] = useState(null);
 
+  useTitle("Register")
   const handleRegister = (e) => {
-    useTitle("Register")
     e.preventDefault();
     const middle = e.target;
     const email = middle.email.value;

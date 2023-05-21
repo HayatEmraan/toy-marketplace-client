@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
+import useTitle from "../Hook/useTitle";
 
 const Details = () => {
   const { id } = useParams();
+  useTitle("Details")
   const [getData, setData] = useState(null);
   console.log(getData);
   useEffect(() => {

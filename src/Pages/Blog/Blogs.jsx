@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import useTitle from "../../libs/Hook/useTitle";
 
 const Blogs = () => {
+  useTitle("Blogs")
   const [blogs, setBlogs] = useState(null);
   useEffect(() => {
     fetch("http://localhost:3000/temp")
