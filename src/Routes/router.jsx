@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import Blogs from "../Pages/Blog/Blogs";
 import Edit from "../libs/Edit/Edit";
 import Details from "../libs/Details/Details";
+import Private0 from "./private0";
 
 const router = createBrowserRouter([
   {
@@ -69,7 +70,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details />,
+        element: (
+          <Private0>
+            <Details />
+          </Private0>
+        ),
       },
     ],
   },
