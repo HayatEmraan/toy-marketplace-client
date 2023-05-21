@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { authContext } from "../../Context/OneContext";
+import useTitle from "../../libs/Hook/useTitle";
 
 const MyToys = () => {
+  useTitle("My Toys");
   const [tableData, setTableData] = useState(null);
   const [actions, setActions] = useState(null);
   const [actionsData, setActionsData] = useState("");

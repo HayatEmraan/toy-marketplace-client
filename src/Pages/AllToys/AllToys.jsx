@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../../libs/Hook/useTitle";
 
 const AllToys = () => {
   const [tableData, setTableData] = useState(null);
-
+  useTitle("All Toys");
   useEffect(() => {
     fetch("http://localhost:3000/api/all/limit")
       .then((res) => res.json())

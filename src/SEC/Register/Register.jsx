@@ -5,6 +5,7 @@ import { BsGithub } from "react-icons/bs";
 import { authContext } from "../../Context/OneContext";
 import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
+import useTitle from "../../libs/Hook/useTitle";
 
 const Register = () => {
   const { createUser, googlePopUp, githubPopUp, user } =
@@ -17,6 +18,7 @@ const Register = () => {
   const [errorData, setErrorData] = useState(null);
 
   const handleRegister = (e) => {
+    useTitle("Register")
     e.preventDefault();
     const middle = e.target;
     const email = middle.email.value;

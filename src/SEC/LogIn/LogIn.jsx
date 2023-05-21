@@ -4,8 +4,10 @@ import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 import { authContext } from "../../Context/OneContext";
 import { ToastContainer, toast } from "react-toastify";
+import useTitle from "../../libs/Hook/useTitle";
 
 const LogIn = () => {
+  useTitle("LogIn");
   const { logIn, googlePopUp, githubPopUp, user } = useContext(authContext);
   const [action, setAction] = useState(false);
   const location = useLocation();

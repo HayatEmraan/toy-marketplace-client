@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { authContext } from "../../Context/OneContext";
 import { Link } from "react-router-dom";
+import useTitle from "../../libs/Hook/useTitle";
 
 const Forgot = () => {
+  useTitle("Forgot Password");
     const { forgotPassword } = useContext(authContext);
     const handleForgot = (e) => {
         e.preventDefault();
