@@ -9,7 +9,7 @@ const Blog = () => {
   const [getData, setData] = useState(null);
   console.log(getData);
   useEffect(() => {
-    fetch(`http://localhost:3000/api/v1/${id}`)
+    fetch(`http://localhost:3000/api/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));
@@ -25,7 +25,7 @@ const Blog = () => {
                   <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                     <img
                       className="mr-4 w-16 h-16 rounded-full"
-                      src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                      src={getData?.img}
                       alt="Jese Leos"
                     />
                     <div>
@@ -34,7 +34,7 @@ const Blog = () => {
                         rel="author"
                         className="text-xl font-bold text-gray-900 dark:text-white"
                       >
-                        {getData?.seller}
+                        {getData?.author_name}
                       </a>
                       <p className="text-base font-light text-gray-500 dark:text-gray-400">
                         {getData?.email || "toymarket@gmail.com"}
@@ -42,21 +42,18 @@ const Blog = () => {
                     </div>
                   </div>
                   <div>
-                    <ReactStars
-                      size={25}
-                      value={getData?.rating}
-                      edit={false}
-                    />
+                    <h2>Publish Date</h2>
+                    <p>{getData?.publish_date}</p>
                   </div>
                 </address>
                 <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
-                  {getData?.name}
+                  {getData?.topic?.question}
                 </h1>
               </header>
-              <p className="lead">{getData?.description}</p>
+              <p className="lead">{getData?.topic?.answer}</p>
               <figure>
                 <img src={getData?.image} alt="" />
-                <figcaption>Digital art by {getData?.seller}</figcaption>
+                <figcaption>Digital art by {getData?.author_name}</figcaption>
               </figure>
 
               {getData?.featuers &&

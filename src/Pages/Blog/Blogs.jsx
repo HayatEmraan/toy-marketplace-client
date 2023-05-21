@@ -6,7 +6,7 @@ const Blogs = () => {
   useTitle("Blogs")
   const [blogs, setBlogs] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:3000/temp")
+    fetch("http://localhost:3000/api/blogs")
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
