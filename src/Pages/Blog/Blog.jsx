@@ -7,7 +7,6 @@ const Blog = () => {
   const { id } = useParams();
   useTitle("Blog");
   const [getData, setData] = useState(null);
-  console.log(getData);
   useEffect(() => {
     fetch(`https://toy-collection-server.vercel.app/api/blogs/${id}`)
       .then((res) => res.json())

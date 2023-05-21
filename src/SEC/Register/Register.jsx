@@ -12,7 +12,6 @@ const Register = () => {
     useContext(authContext);
   const [action, setAction] = useState(false);
   const location = useLocation();
-  console.log(location);
   const navigate = useNavigate();
   const from = location?.state?.pathname || "/";
   const [errorData, setErrorData] = useState(null);
@@ -27,7 +26,6 @@ const Register = () => {
     const imageURL = middle.photoURL.value;
     setAction(true);
     setErrorData(null);
-    console.log(email, password);
     createUser(email, password)
       .then((result) => {
         updateProfile(result.user, {
@@ -69,7 +67,6 @@ const Register = () => {
             setTimeout(() => {
               navigate(from);
             }, 3000);
-            console.log(result.user)
         })
       .catch((err) => console.log(err));
   };
@@ -89,7 +86,6 @@ const Register = () => {
             setTimeout(() => {
               navigate(from);
             }, 3000);
-            console.log(result.user)
         })
       .catch((err) => console.log(err));
   };

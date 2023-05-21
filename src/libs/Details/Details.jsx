@@ -7,7 +7,6 @@ const Details = () => {
   const { id } = useParams();
   useTitle("Details");
   const [getData, setData] = useState(null);
-  console.log(getData);
   useEffect(() => {
     fetch(`https://toy-collection-server.vercel.app/api/v1/${id}`)
       .then((res) => res.json())

@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 
 const TabsData = ({ props }) => {
   const [tabsData, setTabsData] = useState(null);
-  console.log(props);
-  console.log(tabsData);
   useEffect(() => {
     fetch(
       `https://toy-collection-server.vercel.app/api/${

@@ -54,7 +54,6 @@ const AddAToy = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        console.log(data);
       });
   };
   return (

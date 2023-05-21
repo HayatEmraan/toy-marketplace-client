@@ -6,8 +6,6 @@ import "aos/dist/aos.css";
 
 const SubTabsData = ({ props }) => {
   const [tabsData, setTabsData] = useState(null);
-  console.log(props);
-  console.log(tabsData);
   useEffect(() => {
     fetch(`https://toy-collection-server.vercel.app/api/sub/${props}`)
       .then((res) => res.json())

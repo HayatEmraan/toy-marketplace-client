@@ -8,7 +8,7 @@ const AllToys = () => {
   const [loadingSpinner, setLoadingSpinner] = useState(true);
   useTitle("All Toys");
   useEffect(() => {
-    fetch("https://toy-collection-server.vercel.app/api/all/limit")
+    fetch("https://toy-collection-server-hayatemraan.vercel.app/api/all/limit")
       .then((res) => res.json())
       .then((data) => {
         setLoadingSpinner(false);

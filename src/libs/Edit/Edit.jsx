@@ -8,7 +8,6 @@ const Edit = () => {
   const { id } = useParams();
   const { user } = useContext(authContext);
   const [toy, setToy] = useState(null);
-  console.log(toy);
   const updateOne = (e) => {
     e.preventDefault();
     const middle = e.target;
@@ -55,10 +54,8 @@ const Edit = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        console.log(data);
       });
   };
-  console.log(id);
   useEffect(() => {
     fetch(`https://toy-collection-server.vercel.app/api/v1/${id}`)
       .then((res) => res.json())

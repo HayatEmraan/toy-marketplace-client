@@ -16,11 +16,9 @@ export default function Header() {
     logOut()
       .then((res) => {
         localStorage.removeItem("user");
-        console.log(res);
       })
       .catch((err) => console.log(err));
   };
-  console.log(user);
   return (
     <header className="bg-white container mx-auto mb-2">
       <nav

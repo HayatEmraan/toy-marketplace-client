@@ -20,7 +20,6 @@ const LogIn = () => {
     const email = middle.email.value;
     const password = middle.password.value;
     setAction(true);
-    console.log(email, password);
     logIn(email, password)
       .then((result) => {
         toast.success("Signed In Successfully", {
@@ -58,7 +57,6 @@ const LogIn = () => {
             setTimeout(() => {
               navigate(from);
             }, 3000);
-            console.log(result.user)
         })
       .catch((err) => console.log(err));
   };
@@ -78,7 +76,6 @@ const LogIn = () => {
             setTimeout(() => {
               navigate(from);
             }, 2000);
-            console.log(result.user)
         })
       .catch((err) => console.log(err));
   };

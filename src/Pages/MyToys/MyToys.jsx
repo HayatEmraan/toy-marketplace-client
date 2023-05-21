@@ -10,10 +10,9 @@ const MyToys = () => {
   const [actions, setActions] = useState(null);
   const [actionsData, setActionsData] = useState("");
   const { user } = useContext(authContext);
-
   useEffect(() => {
     fetch(
-      `http://localhost:3000/api/query${
+      `https://toy-collection-server.vercel.app/api/query${
         !actionsData
           ? `?email=${user?.email}`
           : actionsData == "ascending"
@@ -42,7 +41,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/api/query/${e}`, {
+        fetch(`https://toy-collection-server.vercel.app/api/query/${e}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
