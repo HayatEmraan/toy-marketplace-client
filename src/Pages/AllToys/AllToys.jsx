@@ -5,9 +5,9 @@ const AllToys = () => {
   const [tableData, setTableData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/all")
+    fetch("http://localhost:3000/api/all/limit")
       .then((res) => res.json())
-      .then((data) => setTableData(data.reverse()));
+      .then((data) => setTableData(data));
   }, []);
   console.log(tableData);
   return (
@@ -27,7 +27,7 @@ const AllToys = () => {
           </thead>
           <tbody>
             {tableData &&
-              tableData.slice(0, 20).map((tdata, index) => {
+              tableData.map((tdata, index) => {
                 return (
                   <React.Fragment key={tdata._id}>
                     <tr>
