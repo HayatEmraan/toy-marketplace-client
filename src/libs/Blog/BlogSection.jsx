@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const BlogSection = () => {
   const [blogs, setBlogs] = useState(null);
@@ -39,10 +40,10 @@ const BlogSection = () => {
                     </div>
                     <div className="group relative">
                       <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                        <p>
+                        <Link to={`/blog/${post._id}`} className="hover:underline">
                           <span className="absolute inset-0" />
                           {post.topic.question}
-                        </p>
+                        </Link>
                       </h3>
                       <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
                         {post.topic.answer}

@@ -14,6 +14,7 @@ import Blogs from "../Pages/Blog/Blogs";
 import Edit from "../libs/Edit/Edit";
 import Details from "../libs/Details/Details";
 import Private0 from "./private0";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
             <Details />
           </Private0>
         ),
+      },
+      {
+        path: "/blogs/:id",
+        element: <Blog />,
       },
     ],
   },
