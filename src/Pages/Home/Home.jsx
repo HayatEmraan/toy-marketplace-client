@@ -4,6 +4,8 @@ import Brands from "../../libs/Brands/Brands";
 import BlogSection from "../../libs/Blog/BlogSection";
 import NewsLetter from "../../libs/NewsLetter/NewsLetter";
 import Galary from "../../libs/Galary/Galary";
+import Tabs from "../../libs/Tabs/Tabs";
+import TabsComponents from "../../libs/Tabs/Tabs";
 
 const Home = () => {
   return (
@@ -11,6 +13,7 @@ const Home = () => {
       <Carousel />
       <Brands />
       <Galary />
+      <TabsComponents />
       <BlogSection />
       <NewsLetter />
     </div>
